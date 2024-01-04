@@ -17,6 +17,9 @@ orgs.newOrg('eclipse-symphony') {
     },
   },
   _repositories+:: [
+    orgs.newRepo('symphony') {
+      description: "Symphony project",
+    },
     orgs.newRepo('symphony-website') {
       allow_merge_commit: true,
       allow_update_branch: false,
