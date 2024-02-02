@@ -8,7 +8,6 @@ orgs.newOrg('eclipse-symphony') {
     name: "Eclipse Symphony",
     plan: "free",
     readers_can_create_discussions: true,
-    two_factor_requirement: false,
     web_commit_signoff_required: false,
     workflows+: {
       actions_can_approve_pull_request_reviews: false,
@@ -17,6 +16,9 @@ orgs.newOrg('eclipse-symphony') {
   _repositories+:: [
     orgs.newRepo('symphony') {
       description: "Symphony project",
+      has_discussions: true,
+      has_projects: false,
+      has_wiki: false,
     },
     orgs.newRepo('symphony-website') {
       allow_merge_commit: true,
