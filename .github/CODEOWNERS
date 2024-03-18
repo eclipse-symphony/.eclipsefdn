@@ -2,4 +2,4 @@
 *             @eclipse-symphony/eclipsefdn-releng
 
 # Otterdog related configurations are also owned by the security team.
-/otterdog/**  @eclipse-symphony/eclipsefdn-security @eclipse-symphony/eclipsefdn-releng
+/otterdog/**  @eclipse-symphony/eclipsefdn-security
