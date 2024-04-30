@@ -2,8 +2,7 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
 # Function to create a new branch protection rule with default settings.
 # https://otterdog.readthedocs.io/en/stable/reference/organization/repository/branch-protection-rule/
-local newBranchProtectionRule(pattern) = {
-  pattern: pattern,
+local newBranchProtectionRule(pattern) = orgs.newBranchProtectionRule(pattern) {
   dismisses_stale_reviews: true,
   requires_pull_request: true,
   required_approving_review_count: 1,
