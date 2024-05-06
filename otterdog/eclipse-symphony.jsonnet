@@ -19,16 +19,16 @@ orgs.newOrg('eclipse-symphony') {
       branch_protection_rules: [
         # https://otterdog.readthedocs.io/en/stable/reference/organization/repository/branch-protection-rule/
         orgs.newBranchProtectionRule("main") {
-            dismisses_stale_reviews: true,
-            requires_pull_request: true,
-            required_approving_review_count: 1,
-            requires_status_checks: true,
-            requires_strict_status_checks: true,
-            requires_conversation_resolution: true,
-            bypass_pull_request_allowances+: [
-              "@eclipse-symphony-bot",
-              "@github-actions",
-            ],
+          dismisses_stale_reviews: true,
+          requires_pull_request: true,
+          required_approving_review_count: 1,
+          requires_status_checks: true,
+          requires_strict_status_checks: true,
+          requires_conversation_resolution: true,
+          bypass_pull_request_allowances+: [
+            "@eclipse-symphony-bot",
+            "@github-actions",
+          ],
         },
       ],
     },
