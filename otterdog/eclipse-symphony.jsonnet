@@ -16,6 +16,11 @@ orgs.newOrg('eclipse-symphony') {
       has_discussions: true,
       has_projects: false,
       has_wiki: false,
+      secrets: [
+        orgs.newRepoSecret('BOT_GITHUB_TOKEN') {
+          value: "pass:bots/iot.symphony/github.com/api-token",
+        },
+      ],
       branch_protection_rules: [
         # https://otterdog.readthedocs.io/en/stable/reference/organization/repository/branch-protection-rule/
         orgs.newBranchProtectionRule("main") {
