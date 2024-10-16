@@ -10,6 +10,15 @@ orgs.newOrg('eclipse-symphony') {
     },
   },
   _repositories+:: [
+    orgs.newRepo('docs') {
+      description: "Symphony documentation",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "main",
+      gh_pages_source_path: "/",
+      homepage: "https://eclipse-symphony.github.io/docs",
+      has_projects: false,
+      has_wiki: false,
+    },
     orgs.newRepo('symphony') {
       description: "Symphony project",
       has_discussions: true,
@@ -35,13 +44,14 @@ orgs.newOrg('eclipse-symphony') {
       ],
     },
     orgs.newRepo('symphony-website') {
-      gh_pages_build_type: "legacy",
-      gh_pages_source_branch: "main",
-      gh_pages_source_path: "/",
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "Symphony project website",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "main",
+      gh_pages_source_path: "/",
+      homepage: "https://eclipse-symphony.github.io/symphony-website",
       web_commit_signoff_required: false,
       environments: [
         orgs.newEnvironment('github-pages') {
