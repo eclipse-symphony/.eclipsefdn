@@ -23,6 +23,14 @@ orgs.newOrg('eclipse-symphony') {
           value: "pass:bots/iot.symphony/github.com/api-token",
         },
       ],
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "doc-site"
+          ],
+          deployment_branch_policy: "selected",
+        ]
+      ],
       branch_protection_rules: [
         # https://otterdog.readthedocs.io/en/stable/reference/organization/repository/branch-protection-rule/
         orgs.newBranchProtectionRule("main") {
@@ -46,6 +54,14 @@ orgs.newOrg('eclipse-symphony') {
       delete_branch_on_merge: false,
       description: "Symphony project website",
       web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "main"
+          ],
+          deployment_branch_policy: "selected",
+        ]
+      ],
     },
   ],
 }
