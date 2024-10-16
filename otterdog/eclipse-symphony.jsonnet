@@ -29,7 +29,7 @@ orgs.newOrg('eclipse-symphony') {
             "doc-site"
           ],
           deployment_branch_policy: "selected",
-        ]
+        },
       ],
       branch_protection_rules: [
         # https://otterdog.readthedocs.io/en/stable/reference/organization/repository/branch-protection-rule/
@@ -60,7 +60,7 @@ orgs.newOrg('eclipse-symphony') {
             "main"
           ],
           deployment_branch_policy: "selected",
-        ]
+        },
       ],
     },
   ],
