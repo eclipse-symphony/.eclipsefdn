@@ -11,9 +11,6 @@ orgs.newOrg('eclipse-symphony') {
   },
   _repositories+:: [
     orgs.newRepo('symphony') {
-      gh_pages_build_type: "legacy",
-      gh_pages_source_branch: "doc-site",
-      gh_pages_source_path: "/landing/public",
       description: "Symphony project",
       has_discussions: true,
       has_projects: false,
@@ -21,14 +18,6 @@ orgs.newOrg('eclipse-symphony') {
       secrets: [
         orgs.newRepoSecret('BOT_GITHUB_TOKEN') {
           value: "pass:bots/iot.symphony/github.com/api-token",
-        },
-      ],
-      environments: [
-        orgs.newEnvironment('github-pages') {
-          branch_policies+: [
-            "doc-site"
-          ],
-          deployment_branch_policy: "selected",
         },
       ],
       branch_protection_rules: [
