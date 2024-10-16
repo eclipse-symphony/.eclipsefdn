@@ -13,7 +13,7 @@ orgs.newOrg('eclipse-symphony') {
     orgs.newRepo('symphony') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "main",
-      gh_pages_source_path: "/landing",
+      gh_pages_source_path: "/landing/public",
       description: "Symphony project",
       has_discussions: true,
       has_projects: false,
