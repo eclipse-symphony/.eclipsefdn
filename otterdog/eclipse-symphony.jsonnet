@@ -18,6 +18,14 @@ orgs.newOrg('eclipse-symphony') {
       homepage: "https://eclipse-symphony.github.io/docs",
       has_projects: false,
       has_wiki: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "main"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('symphony') {
       description: "Symphony project",
