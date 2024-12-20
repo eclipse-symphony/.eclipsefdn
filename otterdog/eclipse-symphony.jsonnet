@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('eclipse-symphony') {
+orgs.newOrg('iot.symphony', 'eclipse-symphony') {
   settings+: {
     description: "",
     name: "Eclipse Symphony",
