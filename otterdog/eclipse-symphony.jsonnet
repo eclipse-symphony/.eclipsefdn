@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('eclipse-symphony') {
+orgs.newOrg('iot.symphony', 'eclipse-symphony') {
   settings+: {
     description: "",
     name: "Eclipse Symphony",
@@ -10,6 +10,23 @@ orgs.newOrg('eclipse-symphony') {
     },
   },
   _repositories+:: [
+    orgs.newRepo('docs') {
+      description: "Symphony documentation",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "main",
+      gh_pages_source_path: "/",
+      homepage: "https://eclipse-symphony.github.io/docs",
+      has_projects: false,
+      has_wiki: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "main"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
+    },
     orgs.newRepo('symphony') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "doc-site",
@@ -45,7 +62,24 @@ orgs.newOrg('eclipse-symphony') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "Symphony project website",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "main",
+      gh_pages_source_path: "/",
+      homepage: "https://eclipse-symphony.github.io/symphony-website",
       web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "main"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
+  ],
+} + {
+  # snippet added due to 'https://github.com/EclipseFdn/otterdog-configs/blob/main/blueprints/add-dot-github-repo.yml'
+  _repositories+:: [
+    orgs.newRepo('.github')
   ],
 }
