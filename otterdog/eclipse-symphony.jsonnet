@@ -50,6 +50,7 @@ orgs.newOrg('iot.symphony', 'eclipse-symphony') {
           requires_conversation_resolution: true,
           bypass_pull_request_allowances+: [
             "@eclipse-symphony-bot",
+            "user:Haishi2016",
           ],
         },
       ],
